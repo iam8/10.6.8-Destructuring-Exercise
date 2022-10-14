@@ -80,11 +80,33 @@ var obj0 = {
 var a0 = obj0.numbers.a;
 var b0 = obj0.numbers.b;
 
-// ES2015 Assigning Variables to Object Properties
+// ES2015 Assigning Variables to Object Properties With Destructuring
 const obj1 = {
     numbers: {
         a: 1,
         b: 2
     }
 }
+
+const {numbers: {a: a1, b: b1}} = obj1;
+
+
+// ES5 Array Swap
+var arr0 = [1, 2];
+var temp = arr0[0];
+arr0[0] = arr0[1];
+arr0[1] = temp;
+
+// ES2015 Array Swap With Destructuring
+let arr1 = [1, 2];
+[arr1[0], arr1[1]] = [arr1[1], arr1[0]];
+
+
+// raceResults function
+const raceResults = ([first, second, third, ...rest]) => ({
+    first,
+    second,
+    third,
+    rest
+})
 
