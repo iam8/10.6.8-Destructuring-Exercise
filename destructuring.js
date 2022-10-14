@@ -27,13 +27,13 @@ function getUserData({firstName, favoriteColor="green"}){
     return `Your name is ${firstName} and you like ${favoriteColor}`;
 }
 
-getUserData({firstName: "Alejandro", favoriteColor: "purple"});
+console.log(getUserData({firstName: "Alejandro", favoriteColor: "purple"}));
 // Your name is Alejandro and you like purple
 
-getUserData({firstName: "Melissa"});
+console.log(getUserData({firstName: "Melissa"}));
 // Your name is Melissa and you like green
 
-getUserData({});
+console.log(getUserData({}));
 // Your name is undefined and you like green
 
 
@@ -55,7 +55,7 @@ let [raindrops, whiskers, ...aFewOfMyFavoriteThings] = [
 ]
 
 console.log(raindrops); // Raindrops on roses
-console.log(whiskers); // Whiskers on kittens
+console.log(whiskers); // whiskers on kittens
 console.log(aFewOfMyFavoriteThings);
 // ["Bright copper kettles", "warm woolen mittens", "Brown paper packages tied up with strings"]
 
@@ -79,6 +79,8 @@ var obj0 = {
 
 var a0 = obj0.numbers.a;
 var b0 = obj0.numbers.b;
+console.log("a (ES5 result):", a0);
+console.log("b (ES5 result):", b0);
 
 // ES2015 Assigning Variables to Object Properties With Destructuring
 const obj1 = {
@@ -88,7 +90,9 @@ const obj1 = {
     }
 }
 
-const {numbers: {a: a1, b: b1}} = obj1;
+const {numbers: {a: a1, b: b1}} = obj1; // a1 = 1, b1 = 2
+console.log("a (ES2015 result):", a1);
+console.log("b (ES2015 result):", b1);
 
 
 // ES5 Array Swap
@@ -96,10 +100,12 @@ var arr0 = [1, 2];
 var temp = arr0[0];
 arr0[0] = arr0[1];
 arr0[1] = temp;
+console.log("Array (ES5 result):", arr0);
 
 // ES2015 Array Swap With Destructuring
 let arr1 = [1, 2];
-[arr1[0], arr1[1]] = [arr1[1], arr1[0]];
+[arr1[0], arr1[1]] = [arr1[1], arr1[0]]; // arr1 = [2, 1]
+console.log("Array (ES2015 result):", arr1);
 
 
 // raceResults function
@@ -110,3 +116,4 @@ const raceResults = ([first, second, third, ...rest]) => ({
     rest
 })
 
+console.log(raceResults(['Tom', 'Margaret', 'Allison', 'David', 'Pierre']));
