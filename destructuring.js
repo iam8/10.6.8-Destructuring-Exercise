@@ -91,6 +91,7 @@ const obj1 = {
 }
 
 const {numbers: {a: a1, b: b1}} = obj1; // a1 = 1, b1 = 2
+const {a2, b2} = obj1.numbers; // Instructor solution: even shorter
 console.log("a (ES2015 result):", a1);
 console.log("b (ES2015 result):", b1);
 
@@ -109,11 +110,5 @@ console.log("Array (ES2015 result):", arr1);
 
 
 // raceResults function
-const raceResults = ([first, second, third, ...rest]) => ({
-    first,
-    second,
-    third,
-    rest
-})
-
+const raceResults = ([first, second, third, ...rest]) => ({first, second, third, rest});
 console.log(raceResults(['Tom', 'Margaret', 'Allison', 'David', 'Pierre']));
